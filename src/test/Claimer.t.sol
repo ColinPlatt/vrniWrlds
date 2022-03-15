@@ -5,6 +5,7 @@ import "ds-test/test.sol";
 
 import {vrni} from "../vrni.sol";
 import {Claimer} from "../Claimer.sol";
+import {PhaseManager} from "../PhaseManager.sol";
 import {CheatCodes} from"./CheatCodes.sol"; //0x7109709ECfa91a80626fF3989D68f67F5b1DD12D
 
 
@@ -17,6 +18,7 @@ contract ClaimerSetup is DSTest {
     
     vrni token;
     Claimer claimer;
+    PhaseManager manager;
     address deployer;
 
     constructor() {
@@ -34,7 +36,8 @@ contract ClaimerSetup is DSTest {
 
     function setUp() public {
         token = new vrni();
-        claimer = new Claimer(address(token));
+        manager = new PhaseManager();
+        claimer = new Claimer(address(token), address(manager));
     }
 
     function testInvariantMetadata() public {
@@ -46,7 +49,7 @@ contract ClaimerSetup is DSTest {
     function testSettingAirdrop() public logs_gas {
         token.setClaimer(address(claimer));
         claimer.setFreeMintList(airDropAddr, airDropAmt);
-        claimer.activateClaiming();
+        manager.changePhase();
 
         cheats.prank(address(0xBEEF));
         claimer.claimFreeVoronoi();
@@ -58,7 +61,8 @@ contract ClaimerSetup is DSTest {
 
     function testClaiming() public logs_gas {
         token.setClaimer(address(claimer));
-        claimer.activateClaiming();
+        manager.changePhase();
+        
         (bool success, bytes memory data) = address(claimer).call{value: 0.042069 ether}(
             abi.encodeWithSignature("claimVoronoi()")
         );

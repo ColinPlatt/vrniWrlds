@@ -349,8 +349,8 @@
       }
     },
     "/home/cgp/dev/vrniWrlds/src/Claimer.sol": {
-      "lastModificationDate": 1647350059697,
-      "contentHash": "451916b15876daa3bfe487d2214a67f8",
+      "lastModificationDate": 1647358372570,
+      "contentHash": "28e9a853536e458b0818fbe8cc2199fa",
       "sourceName": "src/Claimer.sol",
       "solcConfig": {
         "settings": {
@@ -382,6 +382,9 @@
       "artifacts": {
         "Claimer": {
           "0.8.10+commit.fc410830.Linux.gcc": "Claimer.sol/Claimer.json"
+        },
+        "IPhaseManager": {
+          "0.8.10+commit.fc410830.Linux.gcc": "Claimer.sol/IPhaseManager.json"
         },
         "IVrniMinimal": {
           "0.8.10+commit.fc410830.Linux.gcc": "Claimer.sol/IVrniMinimal.json"
@@ -623,6 +626,43 @@
         }
       }
     },
+    "/home/cgp/dev/vrniWrlds/src/PhaseManager.sol": {
+      "lastModificationDate": 1647354057670,
+      "contentHash": "389402320d6e689033a7628f8020cd1e",
+      "sourceName": "src/PhaseManager.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london"
+        }
+      },
+      "imports": [],
+      "versionRequirement": "=0.8.10",
+      "artifacts": {
+        "IPhaseManager": {
+          "0.8.10+commit.fc410830.Linux.gcc": "PhaseManager.sol/IPhaseManager.json"
+        },
+        "PhaseManager": {
+          "0.8.10+commit.fc410830.Linux.gcc": "PhaseManager.sol/PhaseManager.json"
+        }
+      }
+    },
     "/home/cgp/dev/vrniWrlds/src/test/CheatCodes.sol": {
       "lastModificationDate": 1647350164160,
       "contentHash": "ada49047a1ff27e18b977a843e2c797e",
@@ -658,8 +698,8 @@
       }
     },
     "/home/cgp/dev/vrniWrlds/src/test/Claimer.t.sol": {
-      "lastModificationDate": 1647350428436,
-      "contentHash": "9c5afb697865dcf8e9c832914de0a021",
+      "lastModificationDate": 1647358199239,
+      "contentHash": "a5708344a5f883abab528f5c8d52ab64",
       "sourceName": "src/test/Claimer.t.sol",
       "solcConfig": {
         "settings": {
@@ -691,6 +731,7 @@
         "lib/solmate/src/utils/ReentrancyGuard.sol",
         "src/Claimer.sol",
         "src/Interfaces/IUriInterpreter.sol",
+        "src/PhaseManager.sol",
         "src/test/CheatCodes.sol",
         "src/vrni.sol"
       ],
@@ -698,6 +739,44 @@
       "artifacts": {
         "ClaimerSetup": {
           "0.8.10+commit.fc410830.Linux.gcc": "Claimer.t.sol/ClaimerSetup.json"
+        }
+      }
+    },
+    "/home/cgp/dev/vrniWrlds/src/test/PhaseManager.t.sol": {
+      "lastModificationDate": 1647355290709,
+      "contentHash": "125e2b2c68ad3e2976110d96d14285e4",
+      "sourceName": "src/test/PhaseManager.t.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london"
+        }
+      },
+      "imports": [
+        "lib/ds-test/src/test.sol",
+        "src/PhaseManager.sol",
+        "src/test/CheatCodes.sol"
+      ],
+      "versionRequirement": "=0.8.10",
+      "artifacts": {
+        "PhaseTest": {
+          "0.8.10+commit.fc410830.Linux.gcc": "PhaseManager.t.sol/PhaseTest.json"
         }
       }
     },
