@@ -54,3 +54,13 @@ The DLNY token is used within the vrniWrlds game, and has no external value. It 
 - Reinvesting DLNY allows a vrni NFT holder to commit DLNY to the NFT smart contract to improve aspect of their gameplay Metadata overtime. It can be thought of as locking DLNY to produce more DLNY tokens over time, and at anypoint the vrni NFT can remove their "staked" DLNY tokens from this contract.
 
 In addition to upgrading and reinvesting the DLNY token, vrni NFTs themselves can be locked to allow for the evolution of certain gameplay metadata aspects, such as population increases, and tax collection (released in DLNY).
+
+## Project Phases ##
+
+_Still to write_
+
+- Minting
+
+- Initiation
+
+- Full gameplay
