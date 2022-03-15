@@ -1,0 +1,4 @@
+solidity-bytes-utils/=lib/solidity-bytes-utils/contracts/
+solmate/=lib/solmate/src/
+openzeppelin-contracts/=lib/openzeppelin-contracts/
+ds-test/=lib/ds-test/src/
