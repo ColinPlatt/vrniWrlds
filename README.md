@@ -65,10 +65,13 @@ Function Mining also allows users who do not wish to engage in multiple ongoing 
 
 ## Project Phases ##
 
-_Still to write_
-
 - Minting
+ There will be a maximum of 10,000 vrni NFTs available to be minted, of which a number will be reserved for ENSO NFT holders following a snapshot. Minting will be done a first-come-first-served basis. Upon minting the vrni NFT will be assigned an iniatial coordinate (site), this will be used to generate the initial Voronoi Diagram, which will be overlayed on a secondary contract, as such it is a piece of the puzzle, but not the final piece, as to which cell will be attributed to the individual vrni NFT. 10 NFTs of the 10,000 total supply will be reserved for minting by the deployer contract, these tokens will be used participate in the game and give clarity to the holdings of the developers.
 
 - Initialization
+ Following the minting process, or in the even that not all vrni NFTs are minted and the community have deemed that the process should commence, the project can move to the initialization phase (closing further mints in the event that not all NFTs are claimed). 
+
+ In this phase, an offchain process will take place, collecting all sites, and computing a final Voronoi Diagram. This process will be run through a script that will be published ahead of time, and verifiable by any participant who wishes to run verify it. Following its completion, the results will be published through a modified MerkleDrop, which allows initially for each vrni NFT holder to reveal their cell data and gameplay metadata, doing so will trigger function mining releasing the initial supply of DLNY. After a predetermined period, if not all vrni NFT metadata has been revealed, function mining will be opened up to allow anyone holding vrni NFTs to reveal the remaining metadata in batches.
 
 - Full gameplay
+Once the Initialization phase has been completed and all vrni NFT metadata has been revealed, the project will be considered to be in full gameplay. This will allow for the operation of reinvesting, upgrading and NFT staking.
