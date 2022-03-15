@@ -7,6 +7,8 @@ interface IPhaseManager {
 
     function currentPhase() external view returns (Phase);
 
+    function changePhase() external;
+
 }
 
 // The PhaseManager contract allows all vrniWrlds contracts that rely on a global state of the project to call for the latest state.
