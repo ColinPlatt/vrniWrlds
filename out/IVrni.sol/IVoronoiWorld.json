@@ -152,6 +152,30 @@
           "type": "uint256"
         }
       ],
+      "name": "getCentre",
+      "outputs": [
+        {
+          "internalType": "uint16",
+          "name": "x",
+          "type": "uint16"
+        },
+        {
+          "internalType": "uint16",
+          "name": "y",
+          "type": "uint16"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        }
+      ],
       "name": "getPathDataAddress",
       "outputs": [
         {
@@ -270,25 +294,6 @@
           "internalType": "struct IVoronoiWorld.CellViewData",
           "name": "",
           "type": "tuple"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "id",
-          "type": "uint256"
-        }
-      ],
-      "name": "getSeed",
-      "outputs": [
-        {
-          "internalType": "bytes32",
-          "name": "",
-          "type": "bytes32"
         }
       ],
       "stateMutability": "view",

@@ -19,7 +19,7 @@ contract PhaseTest is DSTest {
         deployer = address(this);
     }
 
-    function setUp() public {
+    function setUp() public logs_gas {
         manager = new PhaseManager();
     }
 

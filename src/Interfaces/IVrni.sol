@@ -30,7 +30,7 @@ interface IVoronoiWorld is IERC721 {
     
     function claimContract() external view returns (address);
 
-    function getSeed(uint256 id) external view returns (bytes32);
+    function getCentre(uint256 id) external view returns (uint16 x, uint16 y) ;
 
     function getXYCoordinatesAddress(uint256 id) external view returns (address);
 

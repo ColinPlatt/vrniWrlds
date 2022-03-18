@@ -13,38 +13,12 @@
           "type": "uint256"
         },
         {
-          "internalType": "bytes32",
-          "name": "_seed",
-          "type": "bytes32"
+          "internalType": "uint16[2]",
+          "name": "_xy",
+          "type": "uint16[2]"
         }
       ],
       "name": "claim",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "globalSeed",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "_globalSeed",
-          "type": "uint256"
-        }
-      ],
-      "name": "setGlobalSeed",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"

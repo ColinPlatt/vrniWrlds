@@ -11,7 +11,8 @@ contract vrni is ERC721, ReentrancyGuard {
     IUriInterpreter private uriIntepreter;
     address public claimContract;
     address private dataManager;
-    address public owner;
+    address public deployer;
+
 
     // we split the CellViewData from the CellMetaData information to optimise the storage in the CellData struct. ViewData contains data directly viewable in the SVG.
     struct CellViewData {
@@ -40,8 +41,9 @@ contract vrni is ERC721, ReentrancyGuard {
 
     // After initialization, all data for each NFT ID (Cell) is held in a struct and read by the IUriInterpreter, which is called by the tokenUri function
     struct CellData {
-        bytes32 tokenSeed; // pseudo random seed generated upon claiming token, used to build the Voronoi Diagram
-        address cellXYCoordinates; // polygon Saved as XY coordinates in Hex over 3 bytes (0xXXXYYY)
+        address cellXYCoordinates; // polygon Saved as XY coordinates in Hex over 2x 2bytes in an SSTORE2 address
+        uint16 centreX; // pseudo random seed generated upon claiming token, used to build the Voronoi Diagram
+        uint16 centreY;
         CellViewData cellViewdata; // contains tightly packed data about the viewbox and cell colour must be interpretted by an interpreter contract 
         address cellPathdata; // SSTORE2 address for extended Path data
         CellMetaData cellMetadata; // contains tightly packed metadata which must be interpretted by an interpreter contract 
@@ -49,10 +51,8 @@ contract vrni is ERC721, ReentrancyGuard {
 
     mapping (uint256 => CellData) public cellDataSet;
 
-    uint256 public globalSeed; // set by claimant contract
-
     constructor() ERC721("vrni NFT", "vrni") {
-        owner = msg.sender;
+        deployer = msg.sender;
     }
 
     function _exists(uint256 id) internal view returns (bool) {
@@ -66,9 +66,9 @@ contract vrni is ERC721, ReentrancyGuard {
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // View functions for retrieving cell information
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    function getSeed(uint256 id) external view returns (bytes32) {
+    function getCentre(uint256 id) external view returns (uint16 x, uint16 y) {
         require(_exists(id), "NONEXISTANT_ID");
-        return cellDataSet[id].tokenSeed;
+        return (cellDataSet[id].centreX, cellDataSet[id].centreY);
     }
 
     function getXYCoordinatesAddress(uint256 id) external view returns (address) {
@@ -97,21 +97,16 @@ contract vrni is ERC721, ReentrancyGuard {
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     function setClaimer(address newClaimer) external {
-        require(msg.sender == owner, "NOT_PERMITTED");
+        require(msg.sender == deployer, "NOT_PERMITTED");
         claimContract = newClaimer;
     }
 
     // claiming moved to external contract, claiming contract has to ensure there are no collisions in assigning ids
-    function claim(address _to, uint256 _id, bytes32 _seed) external {
+    function claim(address _to, uint256 _id, uint16[2] memory xy) external {
         require(msg.sender == claimContract, "NOT_PERMITTED");
-        cellDataSet[_id].tokenSeed = _seed;
+        cellDataSet[_id].centreX = xy[0];
+        cellDataSet[_id].centreY = xy[1];
         _mint(_to, _id);
-    }
-
-    // allows the claiming contract to set the global seed once, and only once. 
-    function setGlobalSeed(uint256 _globalSeed) external {
-        require(msg.sender == claimContract && globalSeed == 0, "NOT_PERMITTED");
-        globalSeed = _globalSeed;
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////

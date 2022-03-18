@@ -243,6 +243,40 @@
         }
       }
     },
+    "/home/cgp/dev/vrniWrlds/lib/solidity-bytes-utils/contracts/BytesLib.sol": {
+      "lastModificationDate": 1647349655681,
+      "contentHash": "9c6b01be648f655631038d79648a7c05",
+      "sourceName": "lib/solidity-bytes-utils/contracts/BytesLib.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london"
+        }
+      },
+      "imports": [],
+      "versionRequirement": ">=0.8.0, <0.9.0",
+      "artifacts": {
+        "BytesLib": {
+          "0.8.10+commit.fc410830.Linux.gcc": "BytesLib.sol/BytesLib.json"
+        }
+      }
+    },
     "/home/cgp/dev/vrniWrlds/lib/solmate/src/tokens/ERC20.sol": {
       "lastModificationDate": 1647349603874,
       "contentHash": "95ac3ff5640ab4a57dc4cdc2992e79c0",
@@ -349,8 +383,8 @@
       }
     },
     "/home/cgp/dev/vrniWrlds/src/Claimer.sol": {
-      "lastModificationDate": 1647358372570,
-      "contentHash": "28e9a853536e458b0818fbe8cc2199fa",
+      "lastModificationDate": 1647605406355,
+      "contentHash": "d20bdf857176f498bf7d507d3f7d6fdd",
       "sourceName": "src/Claimer.sol",
       "solcConfig": {
         "settings": {
@@ -376,6 +410,7 @@
       },
       "imports": [
         "lib/openzeppelin-contracts/contracts/utils/Strings.sol",
+        "lib/solidity-bytes-utils/contracts/BytesLib.sol",
         "lib/solmate/src/utils/ReentrancyGuard.sol"
       ],
       "versionRequirement": "=0.8.10",
@@ -424,6 +459,48 @@
       "artifacts": {
         "DLNY": {
           "0.8.10+commit.fc410830.Linux.gcc": "DLNY.sol/DLNY.json"
+        }
+      }
+    },
+    "/home/cgp/dev/vrniWrlds/src/DeploymentManager.sol": {
+      "lastModificationDate": 1647513467193,
+      "contentHash": "808bfe82fe02a891f9538db807a8423e",
+      "sourceName": "src/DeploymentManager.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london"
+        }
+      },
+      "imports": [
+        "lib/openzeppelin-contracts/contracts/access/Ownable.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Context.sol",
+        "lib/solmate/src/tokens/ERC20.sol",
+        "lib/solmate/src/utils/ReentrancyGuard.sol",
+        "src/DLNY.sol",
+        "src/Distributor.sol",
+        "src/PhaseManager.sol"
+      ],
+      "versionRequirement": "=0.8.10",
+      "artifacts": {
+        "DeploymentManager": {
+          "0.8.10+commit.fc410830.Linux.gcc": "DeploymentManager.sol/DeploymentManager.json"
         }
       }
     },
@@ -590,8 +667,8 @@
       }
     },
     "/home/cgp/dev/vrniWrlds/src/Interfaces/IVrni.sol": {
-      "lastModificationDate": 1647350418128,
-      "contentHash": "328ad8d8f80fd90edea1994dab255327",
+      "lastModificationDate": 1647507195862,
+      "contentHash": "e2ecdde1eb0c33f721a71ec64802023a",
       "sourceName": "src/Interfaces/IVrni.sol",
       "solcConfig": {
         "settings": {
@@ -627,8 +704,8 @@
       }
     },
     "/home/cgp/dev/vrniWrlds/src/PhaseManager.sol": {
-      "lastModificationDate": 1647354057670,
-      "contentHash": "389402320d6e689033a7628f8020cd1e",
+      "lastModificationDate": 1647359999190,
+      "contentHash": "f30992f57360477c615febb0d79fe8a5",
       "sourceName": "src/PhaseManager.sol",
       "solcConfig": {
         "settings": {
@@ -698,8 +775,8 @@
       }
     },
     "/home/cgp/dev/vrniWrlds/src/test/Claimer.t.sol": {
-      "lastModificationDate": 1647358199239,
-      "contentHash": "a5708344a5f883abab528f5c8d52ab64",
+      "lastModificationDate": 1647606082297,
+      "contentHash": "c8d694bc5cbfeb264f230e4cb74af1b2",
       "sourceName": "src/test/Claimer.t.sol",
       "solcConfig": {
         "settings": {
@@ -727,6 +804,7 @@
         "lib/Base64.sol",
         "lib/ds-test/src/test.sol",
         "lib/openzeppelin-contracts/contracts/utils/Strings.sol",
+        "lib/solidity-bytes-utils/contracts/BytesLib.sol",
         "lib/solmate/src/tokens/ERC721.sol",
         "lib/solmate/src/utils/ReentrancyGuard.sol",
         "src/Claimer.sol",
@@ -742,9 +820,54 @@
         }
       }
     },
+    "/home/cgp/dev/vrniWrlds/src/test/Deployment.t.sol": {
+      "lastModificationDate": 1647513490145,
+      "contentHash": "69b40f2a06197397b28eac00443ea434",
+      "sourceName": "src/test/Deployment.t.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london"
+        }
+      },
+      "imports": [
+        "lib/ds-test/src/test.sol",
+        "lib/openzeppelin-contracts/contracts/access/Ownable.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Context.sol",
+        "lib/solmate/src/tokens/ERC20.sol",
+        "lib/solmate/src/utils/ReentrancyGuard.sol",
+        "src/DLNY.sol",
+        "src/DeploymentManager.sol",
+        "src/Distributor.sol",
+        "src/PhaseManager.sol",
+        "src/test/CheatCodes.sol"
+      ],
+      "versionRequirement": "=0.8.10",
+      "artifacts": {
+        "DeploymentTest": {
+          "0.8.10+commit.fc410830.Linux.gcc": "Deployment.t.sol/DeploymentTest.json"
+        }
+      }
+    },
     "/home/cgp/dev/vrniWrlds/src/test/PhaseManager.t.sol": {
-      "lastModificationDate": 1647355290709,
-      "contentHash": "125e2b2c68ad3e2976110d96d14285e4",
+      "lastModificationDate": 1647512259272,
+      "contentHash": "b62d553dc4bb29888217dfc59046afa2",
       "sourceName": "src/test/PhaseManager.t.sol",
       "solcConfig": {
         "settings": {
@@ -780,52 +903,9 @@
         }
       }
     },
-    "/home/cgp/dev/vrniWrlds/src/test/worker.t.sol": {
-      "lastModificationDate": 1647350521612,
-      "contentHash": "434272616c9bcc3b7b0fc22453eab48a",
-      "sourceName": "src/test/worker.t.sol",
-      "solcConfig": {
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ]
-            }
-          },
-          "evmVersion": "london"
-        }
-      },
-      "imports": [
-        "lib/ds-test/src/test.sol",
-        "lib/openzeppelin-contracts/contracts/access/Ownable.sol",
-        "lib/openzeppelin-contracts/contracts/utils/Context.sol",
-        "lib/solmate/src/tokens/ERC20.sol",
-        "lib/solmate/src/utils/ReentrancyGuard.sol",
-        "src/DLNY.sol",
-        "src/Distributor.sol",
-        "src/test/CheatCodes.sol"
-      ],
-      "versionRequirement": "=0.8.10",
-      "artifacts": {
-        "worker": {
-          "0.8.10+commit.fc410830.Linux.gcc": "worker.t.sol/worker.json"
-        }
-      }
-    },
     "/home/cgp/dev/vrniWrlds/src/vrni.sol": {
-      "lastModificationDate": 1647350203960,
-      "contentHash": "d6e3cda7601a0b1f432a3958f8ff3b29",
+      "lastModificationDate": 1647605512524,
+      "contentHash": "23d6207058e01ab2947c761719382e05",
       "sourceName": "src/vrni.sol",
       "solcConfig": {
         "settings": {

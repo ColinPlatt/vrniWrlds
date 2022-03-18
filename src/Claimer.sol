@@ -3,13 +3,10 @@ pragma solidity 0.8.10;
 
 import "solmate/utils/ReentrancyGuard.sol";
 import {Strings} from "openzeppelin-contracts/contracts/utils/Strings.sol";
+import {BytesLib} from "solidity-bytes-utils/BytesLib.sol";
 
 interface IVrniMinimal {
-    function claim(address _to, uint256 _id, bytes32 _seed) external;
-
-    function setGlobalSeed(uint256 _globalSeed) external;
-
-    function globalSeed() external returns (uint256);
+    function claim(address _to, uint256 _id, uint16[2] memory _xy) external;
 
 }
 
@@ -18,8 +15,6 @@ interface IPhaseManager {
     enum Phase { Unstarted, Minting, Initialization, Gameplay }
 
     function currentPhase() external view returns (Phase);
-
-    function changePhase() external;
 
 }
 
@@ -35,6 +30,9 @@ contract Claimer is ReentrancyGuard {
     uint256 constant MAX_SUPPLY = 10_000; // maximum number of Voronoi IDs that can be minted
     uint256 constant CLAIM_PRICE = 0.042069 ether; // standard claim price  !!Need to decide if it will be a free mint!!
     mapping(address => uint256) public freeMints; // allow Enso holders to mint for free
+
+    uint16 constant HEIGHT = 4040; //3840 with 100 border
+    uint16 constant WIDTH = 2360; // 2160 with 100 border
 
     uint256 public nextId;
 
@@ -59,12 +57,9 @@ contract Claimer is ReentrancyGuard {
         voronoiNFT = IVrniMinimal(_voronoiNFT);
     }
 
-    // This burns the ability for the deployer to update this contract further, set the global seed or to withdraw ETH from the contract
+    // This burns the ability for the deployer to update this contract further or to withdraw ETH from the contract
     function renounceDeployerPermissions() public onlyDeployer {
         withdrawETH();
-        if (voronoiNFT.globalSeed() == 0) {
-            setGlobalSeed();
-        }
         _deployer = address(0);
     }
 
@@ -77,26 +72,6 @@ contract Claimer is ReentrancyGuard {
         }
     }
 
-
-    function setGlobalSeed() public onlyDeployer {
-        require(address(voronoiNFT) != address(0), "UNSET_CONTRACT");
-        require(voronoiNFT.globalSeed() == 0, "SEED_SET");
-
-        voronoiNFT.setGlobalSeed(
-                                uint256(
-                                    keccak256(
-                                        abi.encodePacked(
-                                                        block.timestamp,
-                                                        block.coinbase, 
-                                                        block.gaslimit,
-                                                        block.difficulty
-                                                        )
-                                        )
-                                    )
-                                );
-
-    }
-
     function withdrawETH() public onlyDeployer {
         payable(_deployer).transfer(address(this).balance);
     }
@@ -106,36 +81,35 @@ contract Claimer is ReentrancyGuard {
         require (nextId < MAX_SUPPLY, "CLAIM_ERROR");
         require (msg.value >= CLAIM_PRICE, "INSUFFICENT_PAYMENT");
 
-        uint256 tokenId = nextId;
+        uint256 id = nextId;
         nextId++;
 
-        voronoiNFT.claim(msg.sender, tokenId, _claim(tokenId));
+        voronoiNFT.claim(msg.sender, id, _assignCoordinates(id));
     }
 
     function claimVoronoi(uint256 amountClaiming) external payable mintingPhase {
         require (amountClaiming > 0 && (nextId+amountClaiming) < MAX_SUPPLY, "CLAIM_ERROR");
         require ((msg.value*amountClaiming) >= CLAIM_PRICE, "INSUFFICENT_PAYMENT");
 
-        uint256 tokenId;
+        uint256 id;
 
         for(uint256 i = 0; i< amountClaiming; i++) {
-            tokenId = nextId;
+            id = nextId;
             nextId++;
-            voronoiNFT.claim(msg.sender, tokenId, _claim(tokenId));
+            voronoiNFT.claim(msg.sender, id, _assignCoordinates(id));
         }
 
     }
-
     // handle the free claims for Voronoi
     function claimFreeVoronoi() external mintingPhase {
         require (nextId < MAX_SUPPLY, "CLAIM_ERROR");
         require (freeMints[msg.sender] > 0, "INSUFFICIENT_CLAIMS");
         freeMints[msg.sender]--;
 
-        uint256 tokenId = nextId;
+        uint256 id = nextId;
         nextId++;
 
-        voronoiNFT.claim(msg.sender, tokenId, _claim(tokenId));
+        voronoiNFT.claim(msg.sender, id, _assignCoordinates(id));
     }
 
     function claimFreeVoronoi(uint256 amountClaiming) external mintingPhase {
@@ -144,25 +118,28 @@ contract Claimer is ReentrancyGuard {
         
         freeMints[msg.sender] -= amountClaiming;
 
-        uint256 tokenId;
+        uint256 id;
 
         for(uint256 i = 0; i< amountClaiming; i++) {
-            tokenId = nextId;
+            id = nextId;
             nextId++;
-            voronoiNFT.claim(msg.sender, tokenId, _claim(tokenId));
+            voronoiNFT.claim(msg.sender, id, _assignCoordinates(id));
         }
     }
 
-    function _claim(uint256 _tokenId) internal view returns (bytes32) {
-        return keccak256(
-                        abi.encodePacked(
-                                        Strings.toString(_tokenId),
-                                        block.timestamp,
-                                        block.coinbase
-                                        )
-                        );
+    function _assignCoordinates(uint256 _id) internal view returns (uint16[2] memory _xy) {
+
+        bytes32 SEED = keccak256(
+                                abi.encodePacked(
+                                                Strings.toString(_id),
+                                                block.timestamp,
+                                                block.coinbase
+                                                )
+                                );
+
+        _xy[0] = BytesLib.toUint16(abi.encodePacked((bytes16(SEED) << 112)),0) % (WIDTH-101) + 100;
+        _xy[1] = BytesLib.toUint16(abi.encodePacked((bytes16(SEED << 128) << 112)),0) % (HEIGHT-101) + 100;
+
     }
-
-
 
 }

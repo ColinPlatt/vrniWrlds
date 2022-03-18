@@ -8,6 +8,9 @@ import {Claimer} from "../Claimer.sol";
 import {PhaseManager} from "../PhaseManager.sol";
 import {CheatCodes} from"./CheatCodes.sol"; //0x7109709ECfa91a80626fF3989D68f67F5b1DD12D
 
+// TURNED OFF, NEEDS TO BE REWRITTEN - COMBINE WITH DEPLOYMENT MANAGER
+
+
 
 contract ClaimerSetup is DSTest {
     CheatCodes cheats = CheatCodes(HEVM_ADDRESS);
@@ -69,7 +72,9 @@ contract ClaimerSetup is DSTest {
         emit Response(success, data);
         assertEq(token.balanceOf(deployer), 1);
 
-        emit log_bytes32(token.getSeed(0));
+        (uint16 x, uint16 y) = token.getCentre(0);
+        emit log_uint(x);
+        emit log_uint(y);
 
         (bool success1, bytes memory data1) = address(claimer).call{value: 0.42069 ether}(
             abi.encodeWithSignature("claimVoronoi(uint256)",10)
@@ -79,7 +84,6 @@ contract ClaimerSetup is DSTest {
 
         cheats.prank(deployer);
         claimer.withdrawETH();
-        claimer.setGlobalSeed();
         claimer.renounceDeployerPermissions();
 
     }
