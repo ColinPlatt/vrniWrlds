@@ -8,9 +8,6 @@ import {Claimer} from "../Claimer.sol";
 import {PhaseManager} from "../PhaseManager.sol";
 import {CheatCodes} from"./CheatCodes.sol"; //0x7109709ECfa91a80626fF3989D68f67F5b1DD12D
 
-// TURNED OFF, NEEDS TO BE REWRITTEN - COMBINE WITH DEPLOYMENT MANAGER
-
-
 
 contract ClaimerSetup is DSTest {
     CheatCodes cheats = CheatCodes(HEVM_ADDRESS);

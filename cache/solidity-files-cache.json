@@ -740,6 +740,36 @@
         }
       }
     },
+    "/home/cgp/dev/vrniWrlds/src/Revealer.sol": {
+      "lastModificationDate": 1647608865559,
+      "contentHash": "75196b666a204da950a5a012ddfe3ae2",
+      "sourceName": "src/Revealer.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london"
+        }
+      },
+      "imports": [],
+      "versionRequirement": "=0.8.10",
+      "artifacts": {}
+    },
     "/home/cgp/dev/vrniWrlds/src/test/CheatCodes.sol": {
       "lastModificationDate": 1647350164160,
       "contentHash": "ada49047a1ff27e18b977a843e2c797e",
@@ -774,10 +804,10 @@
         }
       }
     },
-    "/home/cgp/dev/vrniWrlds/src/test/Claimer.t.sol": {
-      "lastModificationDate": 1647606082297,
-      "contentHash": "c8d694bc5cbfeb264f230e4cb74af1b2",
-      "sourceName": "src/test/Claimer.t.sol",
+    "/home/cgp/dev/vrniWrlds/src/test/Revealer.t.sol": {
+      "lastModificationDate": 1647615911309,
+      "contentHash": "7ab85e4daa7302ece0f10c9d66160615",
+      "sourceName": "src/test/Revealer.t.sol",
       "solcConfig": {
         "settings": {
           "optimizer": {
@@ -815,97 +845,14 @@
       ],
       "versionRequirement": "=0.8.10",
       "artifacts": {
-        "ClaimerSetup": {
-          "0.8.10+commit.fc410830.Linux.gcc": "Claimer.t.sol/ClaimerSetup.json"
-        }
-      }
-    },
-    "/home/cgp/dev/vrniWrlds/src/test/Deployment.t.sol": {
-      "lastModificationDate": 1647513490145,
-      "contentHash": "69b40f2a06197397b28eac00443ea434",
-      "sourceName": "src/test/Deployment.t.sol",
-      "solcConfig": {
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ]
-            }
-          },
-          "evmVersion": "london"
-        }
-      },
-      "imports": [
-        "lib/ds-test/src/test.sol",
-        "lib/openzeppelin-contracts/contracts/access/Ownable.sol",
-        "lib/openzeppelin-contracts/contracts/utils/Context.sol",
-        "lib/solmate/src/tokens/ERC20.sol",
-        "lib/solmate/src/utils/ReentrancyGuard.sol",
-        "src/DLNY.sol",
-        "src/DeploymentManager.sol",
-        "src/Distributor.sol",
-        "src/PhaseManager.sol",
-        "src/test/CheatCodes.sol"
-      ],
-      "versionRequirement": "=0.8.10",
-      "artifacts": {
-        "DeploymentTest": {
-          "0.8.10+commit.fc410830.Linux.gcc": "Deployment.t.sol/DeploymentTest.json"
-        }
-      }
-    },
-    "/home/cgp/dev/vrniWrlds/src/test/PhaseManager.t.sol": {
-      "lastModificationDate": 1647512259272,
-      "contentHash": "b62d553dc4bb29888217dfc59046afa2",
-      "sourceName": "src/test/PhaseManager.t.sol",
-      "solcConfig": {
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ]
-            }
-          },
-          "evmVersion": "london"
-        }
-      },
-      "imports": [
-        "lib/ds-test/src/test.sol",
-        "src/PhaseManager.sol",
-        "src/test/CheatCodes.sol"
-      ],
-      "versionRequirement": "=0.8.10",
-      "artifacts": {
-        "PhaseTest": {
-          "0.8.10+commit.fc410830.Linux.gcc": "PhaseManager.t.sol/PhaseTest.json"
+        "RevealerTest": {
+          "0.8.10+commit.fc410830.Linux.gcc": "Revealer.t.sol/RevealerTest.json"
         }
       }
     },
     "/home/cgp/dev/vrniWrlds/src/vrni.sol": {
-      "lastModificationDate": 1647605512524,
-      "contentHash": "23d6207058e01ab2947c761719382e05",
+      "lastModificationDate": 1647615201556,
+      "contentHash": "c3428fb5203a38b4e8e71bbd839f2a24",
       "sourceName": "src/vrni.sol",
       "solcConfig": {
         "settings": {

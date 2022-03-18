@@ -10,7 +10,7 @@ import "./Interfaces/IUriInterpreter.sol";
 contract vrni is ERC721, ReentrancyGuard {
     IUriInterpreter private uriIntepreter;
     address public claimContract;
-    address private dataManager;
+    address public dataManager; //initially is the Revealer then switches to a GamePlay dataManager
     address public deployer;
 
 
@@ -86,10 +86,16 @@ contract vrni is ERC721, ReentrancyGuard {
         return cellDataSet[id].cellMetadata;
     }
 
+    function getRawCellData(uint256 id) external view returns (CellData memory) {
+        require(_exists(id), "NONEXISTANT_ID");
+        return cellDataSet[id];
+    }
+
     function getPathDataAddress(uint256 id) external view returns (address) {
         require(_exists(id), "NONEXISTANT_ID");
         return cellDataSet[id].cellPathdata;
     }
+
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -115,7 +121,32 @@ contract vrni is ERC721, ReentrancyGuard {
     // External functions for managing the CellData
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    
+    function setDataManager(address newDataManager) external {
+        require(msg.sender == deployer, "NOT_PERMITTED");
+        dataManager = newDataManager;
+    }
+
+    function revealData(uint256 id, CellData memory revealedData) external {
+        require(msg.sender == dataManager, "NOT_PERMITTED");
+
+        cellDataSet[id] = revealedData;
+    }
+
+    function checkRevealDataHash(CellData memory testData) public pure returns (bytes32 hashedData) {
+        hashedData = keccak256(abi.encode(testData));
+    }
+
+    function checkRevealDataHash(CellData[] memory testData) public pure returns (bytes32[] memory hashedData) {
+        uint256 loopLen = testData.length;
+
+        for(uint256 i = 0; i<loopLen; i++) {
+            hashedData[i] = keccak256(abi.encode(testData[i]));
+        }
+
+        return hashedData;
+        
+    }
+
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
