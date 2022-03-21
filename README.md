@@ -44,8 +44,8 @@ Each individual vrni NFT is mapped to its corresponding metadata which is held b
     - Language: attributed during the initiatization phase
     - Development: attributed during the initiatization phase, and evolves overtime through smart contract interaction and gameplay
     - Industry: evolves overtime through smart contract interaction and gameplay
-    - Tax Rate: set by the vrni NFT owner through smart contract interaction
-    - Government: set by the vrni NFT owner through smart contract interaction, and can be used to create "delegatation" for certain aspects that affect other gameplay metadata (e.g. tax rates)
+    - Tax Rate: set by the vrni NFT owner through smart contract interaction, and can be delegated
+    - Government: set by the vrni NFT owner through smart contract interaction, and can be used to create "delegation" for certain aspects that affect other gameplay metadata (e.g. tax rates)
 
 
 ## DLNY Token Usages ##
@@ -77,8 +77,6 @@ Function Mining also allows users who do not wish to engage in multiple ongoing 
 
 - Full gameplay
 Once the Initialization phase has been completed and all vrni NFT metadata has been revealed, the project will be considered to be in full gameplay. This will allow for the operation of reinvesting, upgrading and NFT staking.
-<<<<<<< HEAD
-=======
 
 
 ## Governments ##
@@ -90,4 +88,3 @@ One core aspect of vrniWrlds is the ability for users to manage their NFT to imp
 While the number of vrni NFTs are limited to 10,000 total pieces, the onchain and open nature of the project allows for experimentation and competitive innovation. Alternative games and even fractionalized sets which build layers upon the vrniWrlds project can grow from the base set. This would allow for competitions outside of the originally envisaged uses. Fractionalization could use similar techniques as the original project to split a vrni NFT into smaller component parcels which could represent blocks in a cities and/or fields in a territory, giving vrniWrlds nearly infinite scalability. 
 
 vrniWrlds is open and limited only by users' imagation and ability to build. 
->>>>>>> 87e2fdf... updated readme
