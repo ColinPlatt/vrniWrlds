@@ -85,4 +85,6 @@ One core aspect of vrniWrlds is the ability for users to manage their NFT to imp
 
 ## Extensions ##
 
-While the number of vrni NFTs are limited to 10,000 total pieces, the onchain and open nature of the project allows for experimentation and competitive innovation. Alternative games and even fractionalized sets which build layers upon the vrniWrlds project can grow from the base set. This would allow for competitions outside of the originally envisaged uses. Fractionalization could use similar techniques as the original project to split a vrni NFT into smaller component parcels which could represent blocks in a cities and/or fields in a territory, giving vrniWrlds nearly infinite scalability. vrniWrlds is open and limited only by users' imagation and ability to build. 
+While the number of vrni NFTs are limited to 10,000 total pieces, the onchain and open nature of the project allows for experimentation and competitive innovation. Alternative games and even fractionalized sets which build layers upon the vrniWrlds project can grow from the base set. This would allow for competitions outside of the originally envisaged uses. Fractionalization could use similar techniques as the original project to split a vrni NFT into smaller component parcels which could represent blocks in a cities and/or fields in a territory, giving vrniWrlds nearly infinite scalability. 
+
+vrniWrlds is open and limited only by users' imagation and ability to build. 
