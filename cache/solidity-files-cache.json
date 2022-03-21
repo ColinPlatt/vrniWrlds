@@ -277,6 +277,43 @@
         }
       }
     },
+    "/home/cgp/dev/vrniWrlds/lib/solmate/src/auth/Auth.sol": {
+      "lastModificationDate": 1647349603870,
+      "contentHash": "76a634d0a382819537ecf118eb247a84",
+      "sourceName": "lib/solmate/src/auth/Auth.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london"
+        }
+      },
+      "imports": [],
+      "versionRequirement": ">=0.8.0",
+      "artifacts": {
+        "Auth": {
+          "0.8.10+commit.fc410830.Linux.gcc": "Auth.sol/Auth.json"
+        },
+        "Authority": {
+          "0.8.10+commit.fc410830.Linux.gcc": "Auth.sol/Authority.json"
+        }
+      }
+    },
     "/home/cgp/dev/vrniWrlds/lib/solmate/src/tokens/ERC20.sol": {
       "lastModificationDate": 1647349603874,
       "contentHash": "95ac3ff5640ab4a57dc4cdc2992e79c0",
@@ -379,6 +416,42 @@
       "artifacts": {
         "ReentrancyGuard": {
           "0.8.10+commit.fc410830.Linux.gcc": "ReentrancyGuard.sol/ReentrancyGuard.json"
+        }
+      }
+    },
+    "/home/cgp/dev/vrniWrlds/src/Authorizer.sol": {
+      "lastModificationDate": 1647866500913,
+      "contentHash": "468baac569e29e9d6dd2bd54e2471be8",
+      "sourceName": "src/Authorizer.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london"
+        }
+      },
+      "imports": [
+        "lib/solmate/src/auth/Auth.sol"
+      ],
+      "versionRequirement": "=0.8.10",
+      "artifacts": {
+        "Authorizer": {
+          "0.8.10+commit.fc410830.Linux.gcc": "Authorizer.sol/Authorizer.json"
         }
       }
     },
@@ -740,10 +813,10 @@
         }
       }
     },
-    "/home/cgp/dev/vrniWrlds/src/Revealer.sol": {
-      "lastModificationDate": 1647608865559,
-      "contentHash": "75196b666a204da950a5a012ddfe3ae2",
-      "sourceName": "src/Revealer.sol",
+    "/home/cgp/dev/vrniWrlds/src/test/Authorizer.t.sol": {
+      "lastModificationDate": 1647866783939,
+      "contentHash": "7b02e1acc126b918cec0828cc0f9a853",
+      "sourceName": "src/test/Authorizer.t.sol",
       "solcConfig": {
         "settings": {
           "optimizer": {
@@ -766,9 +839,18 @@
           "evmVersion": "london"
         }
       },
-      "imports": [],
+      "imports": [
+        "lib/ds-test/src/test.sol",
+        "lib/solmate/src/auth/Auth.sol",
+        "src/Authorizer.sol",
+        "src/test/CheatCodes.sol"
+      ],
       "versionRequirement": "=0.8.10",
-      "artifacts": {}
+      "artifacts": {
+        "AuthTest": {
+          "0.8.10+commit.fc410830.Linux.gcc": "Authorizer.t.sol/AuthTest.json"
+        }
+      }
     },
     "/home/cgp/dev/vrniWrlds/src/test/CheatCodes.sol": {
       "lastModificationDate": 1647350164160,
@@ -804,55 +886,9 @@
         }
       }
     },
-    "/home/cgp/dev/vrniWrlds/src/test/Revealer.t.sol": {
-      "lastModificationDate": 1647615911309,
-      "contentHash": "7ab85e4daa7302ece0f10c9d66160615",
-      "sourceName": "src/test/Revealer.t.sol",
-      "solcConfig": {
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ]
-            }
-          },
-          "evmVersion": "london"
-        }
-      },
-      "imports": [
-        "lib/Base64.sol",
-        "lib/ds-test/src/test.sol",
-        "lib/openzeppelin-contracts/contracts/utils/Strings.sol",
-        "lib/solidity-bytes-utils/contracts/BytesLib.sol",
-        "lib/solmate/src/tokens/ERC721.sol",
-        "lib/solmate/src/utils/ReentrancyGuard.sol",
-        "src/Claimer.sol",
-        "src/Interfaces/IUriInterpreter.sol",
-        "src/PhaseManager.sol",
-        "src/test/CheatCodes.sol",
-        "src/vrni.sol"
-      ],
-      "versionRequirement": "=0.8.10",
-      "artifacts": {
-        "RevealerTest": {
-          "0.8.10+commit.fc410830.Linux.gcc": "Revealer.t.sol/RevealerTest.json"
-        }
-      }
-    },
     "/home/cgp/dev/vrniWrlds/src/vrni.sol": {
-      "lastModificationDate": 1647615201556,
-      "contentHash": "c3428fb5203a38b4e8e71bbd839f2a24",
+      "lastModificationDate": 1647617986364,
+      "contentHash": "b3ad4677087f8cb2d7df92f285fd136d",
       "sourceName": "src/vrni.sol",
       "solcConfig": {
         "settings": {

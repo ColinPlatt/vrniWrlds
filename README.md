@@ -44,8 +44,8 @@ Each individual vrni NFT is mapped to its corresponding metadata which is held b
     - Language: attributed during the initiatization phase
     - Development: attributed during the initiatization phase, and evolves overtime through smart contract interaction and gameplay
     - Industry: evolves overtime through smart contract interaction and gameplay
-    - Tax Rate: set by the vrni NFT owner through smart contract interaction
-    - Government: set by the vrni NFT owner through smart contract interaction, and can be used to create "delegatation" for certain aspects that affect other gameplay metadata (e.g. tax rates)
+    - Tax Rate: set by the vrni NFT owner through smart contract interaction, and can be delegated
+    - Government: set by the vrni NFT owner through smart contract interaction, and can be used to create "delegation" for certain aspects that affect other gameplay metadata (e.g. tax rates)
 
 
 ## DLNY Token Usages ##
@@ -77,3 +77,12 @@ Function Mining also allows users who do not wish to engage in multiple ongoing 
 
 - Full gameplay
 Once the Initialization phase has been completed and all vrni NFT metadata has been revealed, the project will be considered to be in full gameplay. This will allow for the operation of reinvesting, upgrading and NFT staking.
+
+
+## Governments ##
+
+One core aspect of vrniWrlds is the ability for users to manage their NFT to improve their statistics and ability to generate more DLNY tokens. This is done by interacting with a **DataManager** contract, and requires DLNY burns at rates set during Initialization. Some upgrades reach maximum limits, afterwhich incremental improvements can only be done by collaborating with other vrni NFT holders. Collaboration is done by forming or joining a "government" a form of alliance which allows vrni NFT holders to harmonize and jointly change certain aspects, such as tax rates, though a token based vote. These tokens are issued by a separate **Government** contract, which allows vrni NFTs to be staked, and delegates tax rate changes to the Government contract. Governments can issue tokens to vrni NFT holders staked into to their contract, and can manage tax rates in a manner that is applied evenly across all vrni NFTs staked into that Government. There can be multiple governments, each with its own tokens and vrni NFT collections and tax rate policy. In return for delegating control of tax rates to the common Government contract, Development, and Industry statistics will be improved. This improvement is not uniform across all governments, and are based on a number of factors, such as the statistics and attributes of each individual vrni NFT forming the Government contract.
+
+## Extensions ##
+
+While the number of vrni NFTs are limited to 10,000 total pieces, the onchain and open nature of the project allows for experimentation and competitive innovation. Alternative games and even fractionalized sets which build layers upon the vrniWrlds project can grow from the base set. This would allow for competitions outside of the originally envisaged uses. Fractionalization could use similar techniques as the original project to split a vrni NFT into smaller component parcels which could represent blocks in a cities and/or fields in a territory, giving vrniWrlds nearly infinite scalability. vrniWrlds is open and limited only by users' imagation and ability to build. 
