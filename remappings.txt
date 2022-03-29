@@ -1,4 +1,4 @@
-solidity-bytes-utils/=lib/solidity-bytes-utils/contracts/
-solmate/=lib/solmate/src/
-openzeppelin-contracts/=lib/openzeppelin-contracts/
-ds-test/=lib/ds-test/src/
+solmate/=/home/cgp/dev/vrniWrlds/lib/solmate/src/
+solidity-bytes-utils/=/home/cgp/dev/vrniWrlds/lib/solidity-bytes-utils/contracts/
+ds-test/=/home/cgp/dev/vrniWrlds/lib/ds-test/src/
+openzeppelin-contracts/=/home/cgp/dev/vrniWrlds/lib/openzeppelin-contracts/

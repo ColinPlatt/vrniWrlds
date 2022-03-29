@@ -5,10 +5,10 @@ import "solmate/tokens/ERC721.sol";
 import "solmate/utils/ReentrancyGuard.sol";
 
 import "../lib/Base64.sol";
-import "./Interfaces/IUriInterpreter.sol";
+import "./Interfaces/IRenderSVG.sol";
 
 contract vrni is ERC721, ReentrancyGuard {
-    IUriInterpreter private uriIntepreter;
+    IRenderSVG private uriIntepreter;
     address public claimContract;
     address public dataManager; //initially is the Revealer then switches to a GamePlay dataManager
     address public deployer;
@@ -39,7 +39,7 @@ contract vrni is ERC721, ReentrancyGuard {
         //20 bytes for address coordinates & 11 bytes here
     }
 
-    // After initialization, all data for each NFT ID (Cell) is held in a struct and read by the IUriInterpreter, which is called by the tokenUri function
+    // After initialization, all data for each NFT ID (Cell) is held in a struct and read by the IRenderSVG, which is called by the tokenUri function
     struct CellData {
         address cellXYCoordinates; // polygon Saved as XY coordinates in Hex over 2x 2bytes in an SSTORE2 address
         uint16 centreX; // pseudo random seed generated upon claiming token, used to build the Voronoi Diagram
@@ -151,7 +151,7 @@ contract vrni is ERC721, ReentrancyGuard {
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     function setUriCoder(address _newUriCoder) external {
-        uriIntepreter = IUriInterpreter(_newUriCoder);
+        uriIntepreter = IRenderSVG(_newUriCoder);
     }
 
 

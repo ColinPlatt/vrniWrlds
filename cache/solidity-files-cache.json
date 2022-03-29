@@ -2,7 +2,7 @@
   "_format": "ethers-rs-sol-cache-2",
   "files": {
     "/home/cgp/dev/vrniWrlds/lib/Base64.sol": {
-      "lastModificationDate": 1646385424670,
+      "lastModificationDate": 1647947773232,
       "contentHash": "f790dfb1eb2dd79340dfc239619641c2",
       "sourceName": "lib/Base64.sol",
       "solcConfig": {
@@ -36,7 +36,7 @@
       }
     },
     "/home/cgp/dev/vrniWrlds/lib/ds-test/src/test.sol": {
-      "lastModificationDate": 1647349121783,
+      "lastModificationDate": 1647947831015,
       "contentHash": "5d45a46528eaf8a26f0a8d93669f3148",
       "sourceName": "lib/ds-test/src/test.sol",
       "solcConfig": {
@@ -70,7 +70,7 @@
       }
     },
     "/home/cgp/dev/vrniWrlds/lib/openzeppelin-contracts/contracts/access/Ownable.sol": {
-      "lastModificationDate": 1647349639610,
+      "lastModificationDate": 1647947834511,
       "contentHash": "8398972af73b4e9e5ff3b31cad86234f",
       "sourceName": "lib/openzeppelin-contracts/contracts/access/Ownable.sol",
       "solcConfig": {
@@ -106,7 +106,7 @@
       }
     },
     "/home/cgp/dev/vrniWrlds/lib/openzeppelin-contracts/contracts/token/ERC721/IERC721.sol": {
-      "lastModificationDate": 1647349639630,
+      "lastModificationDate": 1647947836252,
       "contentHash": "27d219ec6f69478d065fdbfa7931da68",
       "sourceName": "lib/openzeppelin-contracts/contracts/token/ERC721/IERC721.sol",
       "solcConfig": {
@@ -142,7 +142,7 @@
       }
     },
     "/home/cgp/dev/vrniWrlds/lib/openzeppelin-contracts/contracts/utils/Context.sol": {
-      "lastModificationDate": 1647349639634,
+      "lastModificationDate": 1647947836524,
       "contentHash": "5f2c5c4b6af2dd4551027144797bc8be",
       "sourceName": "lib/openzeppelin-contracts/contracts/utils/Context.sol",
       "solcConfig": {
@@ -176,7 +176,7 @@
       }
     },
     "/home/cgp/dev/vrniWrlds/lib/openzeppelin-contracts/contracts/utils/Strings.sol": {
-      "lastModificationDate": 1647349639634,
+      "lastModificationDate": 1647947836561,
       "contentHash": "9c54c6c065d9e590fdcdd72c451425b9",
       "sourceName": "lib/openzeppelin-contracts/contracts/utils/Strings.sol",
       "solcConfig": {
@@ -210,7 +210,7 @@
       }
     },
     "/home/cgp/dev/vrniWrlds/lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol": {
-      "lastModificationDate": 1647349639634,
+      "lastModificationDate": 1647947836698,
       "contentHash": "03e6768535ac4da0e9756f1d8a4a018a",
       "sourceName": "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol",
       "solcConfig": {
@@ -244,7 +244,7 @@
       }
     },
     "/home/cgp/dev/vrniWrlds/lib/solidity-bytes-utils/contracts/BytesLib.sol": {
-      "lastModificationDate": 1647349655681,
+      "lastModificationDate": 1647947841742,
       "contentHash": "9c6b01be648f655631038d79648a7c05",
       "sourceName": "lib/solidity-bytes-utils/contracts/BytesLib.sol",
       "solcConfig": {
@@ -277,45 +277,8 @@
         }
       }
     },
-    "/home/cgp/dev/vrniWrlds/lib/solmate/src/auth/Auth.sol": {
-      "lastModificationDate": 1647349603870,
-      "contentHash": "76a634d0a382819537ecf118eb247a84",
-      "sourceName": "lib/solmate/src/auth/Auth.sol",
-      "solcConfig": {
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ]
-            }
-          },
-          "evmVersion": "london"
-        }
-      },
-      "imports": [],
-      "versionRequirement": ">=0.8.0",
-      "artifacts": {
-        "Auth": {
-          "0.8.10+commit.fc410830.Linux.gcc": "Auth.sol/Auth.json"
-        },
-        "Authority": {
-          "0.8.10+commit.fc410830.Linux.gcc": "Auth.sol/Authority.json"
-        }
-      }
-    },
     "/home/cgp/dev/vrniWrlds/lib/solmate/src/tokens/ERC20.sol": {
-      "lastModificationDate": 1647349603874,
+      "lastModificationDate": 1647948533354,
       "contentHash": "95ac3ff5640ab4a57dc4cdc2992e79c0",
       "sourceName": "lib/solmate/src/tokens/ERC20.sol",
       "solcConfig": {
@@ -349,7 +312,7 @@
       }
     },
     "/home/cgp/dev/vrniWrlds/lib/solmate/src/tokens/ERC721.sol": {
-      "lastModificationDate": 1647349603874,
+      "lastModificationDate": 1647948533361,
       "contentHash": "0a9198cff8c8668c8797b67dc934d6f2",
       "sourceName": "lib/solmate/src/tokens/ERC721.sol",
       "solcConfig": {
@@ -386,7 +349,7 @@
       }
     },
     "/home/cgp/dev/vrniWrlds/lib/solmate/src/utils/ReentrancyGuard.sol": {
-      "lastModificationDate": 1647349603878,
+      "lastModificationDate": 1647948533407,
       "contentHash": "7c96522a6b8a885ee3c3f6df549ac9b8",
       "sourceName": "lib/solmate/src/utils/ReentrancyGuard.sol",
       "solcConfig": {
@@ -419,44 +382,8 @@
         }
       }
     },
-    "/home/cgp/dev/vrniWrlds/src/Authorizer.sol": {
-      "lastModificationDate": 1647866500913,
-      "contentHash": "468baac569e29e9d6dd2bd54e2471be8",
-      "sourceName": "src/Authorizer.sol",
-      "solcConfig": {
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ]
-            }
-          },
-          "evmVersion": "london"
-        }
-      },
-      "imports": [
-        "lib/solmate/src/auth/Auth.sol"
-      ],
-      "versionRequirement": "=0.8.10",
-      "artifacts": {
-        "Authorizer": {
-          "0.8.10+commit.fc410830.Linux.gcc": "Authorizer.sol/Authorizer.json"
-        }
-      }
-    },
     "/home/cgp/dev/vrniWrlds/src/Claimer.sol": {
-      "lastModificationDate": 1647605406355,
+      "lastModificationDate": 1647947773726,
       "contentHash": "d20bdf857176f498bf7d507d3f7d6fdd",
       "sourceName": "src/Claimer.sol",
       "solcConfig": {
@@ -500,7 +427,7 @@
       }
     },
     "/home/cgp/dev/vrniWrlds/src/DLNY.sol": {
-      "lastModificationDate": 1647350006529,
+      "lastModificationDate": 1647947773733,
       "contentHash": "6d45cf4464567ceec0cc9565db3d0ba8",
       "sourceName": "src/DLNY.sol",
       "solcConfig": {
@@ -536,7 +463,7 @@
       }
     },
     "/home/cgp/dev/vrniWrlds/src/DeploymentManager.sol": {
-      "lastModificationDate": 1647513467193,
+      "lastModificationDate": 1647947773739,
       "contentHash": "808bfe82fe02a891f9538db807a8423e",
       "sourceName": "src/DeploymentManager.sol",
       "solcConfig": {
@@ -578,7 +505,7 @@
       }
     },
     "/home/cgp/dev/vrniWrlds/src/Distributor.sol": {
-      "lastModificationDate": 1647349987265,
+      "lastModificationDate": 1647947773745,
       "contentHash": "7be0be0e24534e90d322c716d8eee6cf",
       "sourceName": "src/Distributor.sol",
       "solcConfig": {
@@ -625,7 +552,7 @@
       }
     },
     "/home/cgp/dev/vrniWrlds/src/Interfaces/Distributor.sol": {
-      "lastModificationDate": 1647350365395,
+      "lastModificationDate": 1647947773758,
       "contentHash": "7be0be0e24534e90d322c716d8eee6cf",
       "sourceName": "src/Interfaces/Distributor.sol",
       "solcConfig": {
@@ -672,7 +599,7 @@
       }
     },
     "/home/cgp/dev/vrniWrlds/src/Interfaces/IDataManager.sol": {
-      "lastModificationDate": 1646385424718,
+      "lastModificationDate": 1647947773768,
       "contentHash": "c582b74f21e52d0b77aa0c2eacd07be0",
       "sourceName": "src/Interfaces/IDataManager.sol",
       "solcConfig": {
@@ -705,10 +632,10 @@
         }
       }
     },
-    "/home/cgp/dev/vrniWrlds/src/Interfaces/IUriInterpreter.sol": {
-      "lastModificationDate": 1646385424718,
+    "/home/cgp/dev/vrniWrlds/src/Interfaces/IRenderSVG.sol": {
+      "lastModificationDate": 1647947773776,
       "contentHash": "e18ff81fe1c37665ce9b13d4a1671a6f",
-      "sourceName": "src/Interfaces/IUriInterpreter.sol",
+      "sourceName": "src/Interfaces/IRenderSVG.sol",
       "solcConfig": {
         "settings": {
           "optimizer": {
@@ -734,13 +661,13 @@
       "imports": [],
       "versionRequirement": "^0.8.10",
       "artifacts": {
-        "IUriInterpreter": {
-          "0.8.10+commit.fc410830.Linux.gcc": "IUriInterpreter.sol/IUriInterpreter.json"
+        "IRenderSVG": {
+          "0.8.10+commit.fc410830.Linux.gcc": "IRenderSVG.sol/IRenderSVG.json"
         }
       }
     },
     "/home/cgp/dev/vrniWrlds/src/Interfaces/IVrni.sol": {
-      "lastModificationDate": 1647507195862,
+      "lastModificationDate": 1647947773784,
       "contentHash": "e2ecdde1eb0c33f721a71ec64802023a",
       "sourceName": "src/Interfaces/IVrni.sol",
       "solcConfig": {
@@ -777,7 +704,7 @@
       }
     },
     "/home/cgp/dev/vrniWrlds/src/PhaseManager.sol": {
-      "lastModificationDate": 1647359999190,
+      "lastModificationDate": 1647947773790,
       "contentHash": "f30992f57360477c615febb0d79fe8a5",
       "sourceName": "src/PhaseManager.sol",
       "solcConfig": {
@@ -813,10 +740,10 @@
         }
       }
     },
-    "/home/cgp/dev/vrniWrlds/src/test/Authorizer.t.sol": {
-      "lastModificationDate": 1647866783939,
-      "contentHash": "7b02e1acc126b918cec0828cc0f9a853",
-      "sourceName": "src/test/Authorizer.t.sol",
+    "/home/cgp/dev/vrniWrlds/src/Revealer.sol": {
+      "lastModificationDate": 1647947773796,
+      "contentHash": "75196b666a204da950a5a012ddfe3ae2",
+      "sourceName": "src/Revealer.sol",
       "solcConfig": {
         "settings": {
           "optimizer": {
@@ -839,21 +766,12 @@
           "evmVersion": "london"
         }
       },
-      "imports": [
-        "lib/ds-test/src/test.sol",
-        "lib/solmate/src/auth/Auth.sol",
-        "src/Authorizer.sol",
-        "src/test/CheatCodes.sol"
-      ],
+      "imports": [],
       "versionRequirement": "=0.8.10",
-      "artifacts": {
-        "AuthTest": {
-          "0.8.10+commit.fc410830.Linux.gcc": "Authorizer.t.sol/AuthTest.json"
-        }
-      }
+      "artifacts": {}
     },
     "/home/cgp/dev/vrniWrlds/src/test/CheatCodes.sol": {
-      "lastModificationDate": 1647350164160,
+      "lastModificationDate": 1647947773807,
       "contentHash": "ada49047a1ff27e18b977a843e2c797e",
       "sourceName": "src/test/CheatCodes.sol",
       "solcConfig": {
@@ -886,8 +804,54 @@
         }
       }
     },
+    "/home/cgp/dev/vrniWrlds/src/test/Claimer.t.sol": {
+      "lastModificationDate": 1647947773817,
+      "contentHash": "5e017925398620aedf321e109c46a90a",
+      "sourceName": "src/test/Claimer.t.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london"
+        }
+      },
+      "imports": [
+        "lib/Base64.sol",
+        "lib/ds-test/src/test.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Strings.sol",
+        "lib/solidity-bytes-utils/contracts/BytesLib.sol",
+        "lib/solmate/src/tokens/ERC721.sol",
+        "lib/solmate/src/utils/ReentrancyGuard.sol",
+        "src/Claimer.sol",
+        "src/Interfaces/IRenderSVG.sol",
+        "src/PhaseManager.sol",
+        "src/test/CheatCodes.sol",
+        "src/vrni.sol"
+      ],
+      "versionRequirement": "=0.8.10",
+      "artifacts": {
+        "ClaimerSetup": {
+          "0.8.10+commit.fc410830.Linux.gcc": "Claimer.t.sol/ClaimerSetup.json"
+        }
+      }
+    },
     "/home/cgp/dev/vrniWrlds/src/vrni.sol": {
-      "lastModificationDate": 1647617986364,
+      "lastModificationDate": 1647947773852,
       "contentHash": "b3ad4677087f8cb2d7df92f285fd136d",
       "sourceName": "src/vrni.sol",
       "solcConfig": {
@@ -916,7 +880,7 @@
         "lib/Base64.sol",
         "lib/solmate/src/tokens/ERC721.sol",
         "lib/solmate/src/utils/ReentrancyGuard.sol",
-        "src/Interfaces/IUriInterpreter.sol"
+        "src/Interfaces/IRenderSVG.sol"
       ],
       "versionRequirement": "=0.8.10",
       "artifacts": {
